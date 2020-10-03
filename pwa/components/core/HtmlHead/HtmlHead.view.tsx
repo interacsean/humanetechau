@@ -11,7 +11,7 @@ const HtmlHeadView: FC<HtmlHeadProps> = (
 ): ReactElement<'div'> => {
   return (
     <Head>
-      <title key="htmlTitle">Options Profit Calculator</title>
+      <title key="htmlTitle">Humane Technology Australia</title>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -55,37 +55,33 @@ const HtmlHeadView: FC<HtmlHeadProps> = (
       <meta name="MobileOptimized" content="320" />
       <meta httpEquiv="cleartype" content="on" />
       <meta
-        content="Options calculator, profit calculator, stock options, stock options calculator, options tool, share options, roi"
+        content=""
         name="keywords"
       />
       <meta
-        content="Free and truly unique stock-options profit calculation tool.  View a potential strategy's return on investment against future stock price AND over time.  Your trade might look good at expiry, but what about next week?  OPC maps out these effects of volatility and time to help eliminate the unknowns from high-return trading."
+        content=""
         name="description"
       />
       <meta content="index,follow" name="robots" />
-      <meta itemProp="name" content="Options profit calculator" />
+      <meta itemProp="name" content="" />
       <meta
         itemProp="description"
-        content="Free and truly unique stock-options profit calculation tool.  View a potential strategy's return on investment against future stock price AND over time.  Your trade might look good at expiry, but what about next week?  OPC maps out these effects of volatility and time to help eliminate the unknowns from high-return trading."
+        content=""
       />
       <meta itemProp="url" content="" />
       <meta
         itemProp="image"
         content={`${SITE.STATIC_URI}/images/opc-sqr.jpg`}
       />
-      <meta property="og:title" content="Options profit calculator" />
+      <meta property="og:title" content="" />
       <meta
         property="og:description"
-        content="Free and truly unique stock-options profit calculation tool.  View a potential strategy's return on investment against future stock price AND over time.  Your trade might look good at expiry, but what about next week?  OPC maps out these effects of volatility and time to help eliminate the unknowns from high-return trading."
+        content=""
       />
       <meta property="og:url" content="" />
       <meta
         property="og:image"
         content={`${SITE.STATIC_URI}/images/opc-sqr.jpg`}
-      />
-      <script
-        async
-        src="https://cdn.fuseplatform.net/publift/tags/2/2055/fuse.js"
       />
     </Head>
   );

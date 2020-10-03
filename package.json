@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "cross-fetch": "3.0.6",
     "errable": "0.3.5",
     "next": "9.5.3",
     "ramda": "0.27.1",

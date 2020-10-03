@@ -64,14 +64,10 @@ body {
   }
 }
 
-.opcalc-modal-open {
-  overflow: hidden;
-}
-
-.react-slidedown.opcalc-dropdown-slidedown {
-  transition-duration: $txn-swift;
-}
-
 .text-error {
   color: $col-error;
+}
+
+.text-success {
+  color: $col-success;
 }
