@@ -11,16 +11,23 @@
   @include desktop-small-plus {
     font-size: toRem(19px);
   }
-  > ._subline {
-    font-weight: $font-weight-medium;
-    font-size: toRem(13.19px);
-    letter-spacing: 2.7px;
-    text-transform: uppercase;
-  }
+}
+.subline {
+  color: $col-headings-on-dark;
+  font-family: $font-headings;
+  font-weight: $font-weight-medium;
+  font-size: toRem(13.19px);
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
 }
 
-.logo-ctnr {
+.logoCtnr {
   @include clickable;
+}
+.logoImgCtnr {
+  border: 1px solid #ffffff66;
+  padding-left: $pad-1-4;
+  padding-right: #{$pad-1-4 * 0.8};
 }
 
 .text-space {

@@ -14,6 +14,14 @@ import BodySegment from '../../layouts/BodySegment';
 
 type HomePublicProps = {};
 
+const nextMeetupDate = ['Wed', '12', 'May', '7pm'];
+const nextMeetupDesc = "Ethical design of Social Robots, with Dr Belinda Dunstan.";
+
+// https://www.meetup.com/humane-technology-australia/events/fqgchsycchbqb/
+const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsycchbqb/';
+const nextMeetupGCalLink = 'http://www.google.com/calendar/event?location=Online+event&action=TEMPLATE&sprop=name%3AHumane+Technology+Australia&sprop=website%3Ahttps%3A%2F%2Fwww.meetup.com%2Fhumane-technology-australia%2Fevents%2F277464343&details=For+full+details%2C+including+the+address%2C+and+to+RSVP+see%3A+https%3A%2F%2Fwww.meetup.com%2Fhumane-technology-australia%2Fevents%2F277464343%0A%0AJoin+us+for+our+catch-up+on+all+things+humane+tech.%0A%0AThis+month+we+have+Dr+Belinda+Dunstan+who+will+...&text=Ethical+design+of+Social+Robots+%28May+HTA+discussion%29&dates=20210512T090000Z%2F20210512T103000Z';
+const nextMeetupICalLink = 'https://www.meetup.com/humane-technology-australia/events/277464343/ical/Ethical+design+of+Social+Robots+%2528May+HTA+discussion%2529.ics';
+
 const Home: NextPage<HomePublicProps> = (
   _props: HomePublicProps,
 ) => {
@@ -53,7 +61,49 @@ const Home: NextPage<HomePublicProps> = (
               </P>
             </BodySegment>
           </Box>
+
+          <T h5 mt={4} mb={1 / 2}>Join our monthly discussions</T>
+          <Box tagName="a" className={['link-raw', css.promoBanner, 'formatted-content']} target="_blank">
+            <T content-pragmatic no-margin style={{ maxWidth: '70ch' }} mb={1}>
+              We host discussion groups to explore how technology is impacting society and personal well-being,
+              through guest speakers and open conversation.
+            </T>
+            <T content-pragmatic mb={1}>
+              Meetings are held on the 2nd Wednesday of each month.
+            </T>
+            <Box flex-sec="start" style={{ maxWidth: '70ch' }}>
+              <div dangerouslySetInnerHTML={{ __html: `
+                <table style="width: 4.5em; border:2px solid #08121a; box-shadow: 2px 2px 3px 0 #00000033">
+                  <thead>
+                    <tr>
+                      <th align="center" style="color: #fff; padding: 0em 0.3em; background-color: #08121a;">${nextMeetupDate[2]}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding: 0.3em 0.3em 0.5em; background-color: white;" align="center">
+                        <span style="text-align: center; font-weight: bolder; font-size: 80%; line-height:100%; margin:0">${nextMeetupDate[0]}</span><br/>
+                        <span style="text-align: center; font-size: 200%; line-height:100%; margin:0">${nextMeetupDate[1]}</span><br/><span style="text-align: center; font-size: 70%; line-height:100%; margin:0">${nextMeetupDate[3]} <span style="font-size:90%">AEST</span></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              `}} />
+              <Box ml={1}>
+                <T mb={1 / 3} content-caption>Next meeting</T>
+
+                <T h5 mv={1 / 3}>
+                  {nextMeetupDesc}
+                </T>
+                <T content-pragmatic>Ways to join:</T>
+                <T content-pragmatic><a href={nextMeetupLink} target="_blank">RSVP on Meetup</a>
+                 <span className={css.textSpacer}> | </span><a href={nextMeetupGCalLink} target="_blank">Add to Google Calendar</a>
+                  <span className={css.textSpacer}> | </span><a href={nextMeetupICalLink} target="_blank">Add to Outlook / iCal</a> </T>
+              </Box>
+            </Box>
+          </Box>
         </Box>
+
       </Box>
 
       <Box className={[commonCss.contentWrapper, commonCss.__col_contrast]}>

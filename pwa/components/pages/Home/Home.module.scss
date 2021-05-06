@@ -86,24 +86,25 @@ $notchColor: $col-primary-hotpink;
   max-width: 40em;
 }
 
-.sparkBanner {
+.promoBanner {
   display: block;
   text-decoration: none;
-  background-image: url("/images/site/banner-acqua-1920.jpg");
-  background-size: cover;
+  background-color: rgba($col-panel-contrast, 28%);
   padding: $pad;
   @include tablet-plus {
-    padding: $pad-3 33% $pad-3 $pad-2;
+    padding: $pad-2 $pad-2 $pad-3 $pad-2;
   }
   @include mobile-only {
     @include marginHorizontal(-$mobile-horizontal-padding);
   }
 
+  .textSpacer {
+    opacity: 0.12;
+    padding: 0 0.3ch;
+  }
+
   ._button {
     @extend .button-main;
-    @extend .--style-outline;
-    background-color: transparent;
-    border-color: $col-light;
     &, &:visited {
       color: $col-light !important;
     }
