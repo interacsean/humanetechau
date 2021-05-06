@@ -14,13 +14,41 @@ import BodySegment from '../../layouts/BodySegment';
 
 type HomePublicProps = {};
 
-const nextMeetupDate = ['Wed', '12', 'May', '7pm'];
-const nextMeetupDesc = "Ethical design of Social Robots, with Dr Belinda Dunstan.";
+const enc = encodeURIComponent;
+const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
-// https://www.meetup.com/humane-technology-australia/events/fqgchsycchbqb/
+const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
+const nextMeetupDate = ['Wed', '12', 'May', '7pm'];
+const nextMeetupTitle = "Ethical design of Social Robots, with Dr Belinda Dunstan.";
+
 const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsycchbqb/';
-const nextMeetupGCalLink = 'http://www.google.com/calendar/event?location=Online+event&action=TEMPLATE&sprop=name%3AHumane+Technology+Australia&sprop=website%3Ahttps%3A%2F%2Fwww.meetup.com%2Fhumane-technology-australia%2Fevents%2F277464343&details=For+full+details%2C+including+the+address%2C+and+to+RSVP+see%3A+https%3A%2F%2Fwww.meetup.com%2Fhumane-technology-australia%2Fevents%2F277464343%0A%0AJoin+us+for+our+catch-up+on+all+things+humane+tech.%0A%0AThis+month+we+have+Dr+Belinda+Dunstan+who+will+...&text=Ethical+design+of+Social+Robots+%28May+HTA+discussion%29&dates=20210512T090000Z%2F20210512T103000Z';
-const nextMeetupICalLink = 'https://www.meetup.com/humane-technology-australia/events/277464343/ical/Ethical+design+of+Social+Robots+%2528May+HTA+discussion%2529.ics';
+const nextMeetupDateStart = '20210512T090000Z';
+const nextMeetupDateEnd = '20210512T103000Z';
+const nextMeetupDetails = `Join us for this month's HTA discussion meeting
+
+Topic:
+${nextMeetupTitle}
+
+Join Zoom Meeting
+${zoomLink}
+
+Meeting ID: 648 102 1976
+Passcode: hta1275`;
+const nextMeetupGCalLink = `http://www.google.com/calendar/event?location=${enc(zoomLink)}&action=TEMPLATE&sprop=name%3AHumane+Technology+Australia&details=${enc(nextMeetupDetails)}&text=${enc(`HTA meeting: ${nextMeetupTitle}`)}&dates=${nextMeetupDateStart}%2F${nextMeetupDateEnd}`;
+
+var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Humane Technology Australia//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:noreply@humanetechnology.com.au\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:me@gmail.com\nORGANIZER;CN=Sean:MAILTO::sean@humanetechnology.com.au\nDTSTART:"
+  + nextMeetupDateStart +"\nDTEND:" + nextMeetupDateEnd +"\nLOCATION:" + zoomLink + "\nSUMMARY:HTA meeting - "+nextMeetupTitle+"\nDESCRIPTION:"+encLines(nextMeetupDetails)+"\nEND:VEVENT\nEND:VCALENDAR";
+
+const openIcs = () => {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsMSG));
+  element.setAttribute('download', 'hta-meeting-invite.ics');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
 
 const Home: NextPage<HomePublicProps> = (
   _props: HomePublicProps,
@@ -93,12 +121,12 @@ const Home: NextPage<HomePublicProps> = (
                 <T mb={1 / 3} content-caption>Next meeting</T>
 
                 <T h5 mv={1 / 3}>
-                  {nextMeetupDesc}
+                  {nextMeetupTitle}
                 </T>
                 <T content-pragmatic>Ways to join:</T>
                 <T content-pragmatic><a href={nextMeetupLink} target="_blank">RSVP on Meetup</a>
                  <span className={css.textSpacer}> | </span><a href={nextMeetupGCalLink} target="_blank">Add to Google Calendar</a>
-                  <span className={css.textSpacer}> | </span><a href={nextMeetupICalLink} target="_blank">Add to Outlook / iCal</a> </T>
+                  <span className={css.textSpacer}> | </span><a onClick={openIcs} target="_blank">Add to Outlook / iCal</a> </T>
               </Box>
             </Box>
           </Box>
