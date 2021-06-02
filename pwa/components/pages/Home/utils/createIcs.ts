@@ -4,7 +4,7 @@ const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
 const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
 export const nextMeetupDate = ['Wed', '9', 'Jun', '7pm'];
-export const nextMeetupTitle = "TBD - with Joël Kalmanowicz";
+export const nextMeetupTitle = "Zero Century Exploits: Human Fallibility and How to Patch It - with Joël Kalmanowicz";
 
 export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/';
 export const nextMeetupDateStart = '20210609T090000Z';
