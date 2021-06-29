@@ -3,12 +3,12 @@ const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
 const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
-export const nextMeetupDate = ['Wed', '9', 'Jun', '7pm'];
+export const nextMeetupDate = ['Wed', '14', 'Jul', '7.30pm'];
 export const nextMeetupTitle = "Zero Century Exploits: Human Fallibility and How to Patch It - with Joël Kalmanowicz";
 
 export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/';
-export const nextMeetupDateStart = '20210609T090000Z';
-export const nextMeetupDateEnd = '20210609T103000Z';
+export const nextMeetupDateStart = '20210714T103000Z';
+export const nextMeetupDateEnd = '20210714T113000Z';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
 Topic:
