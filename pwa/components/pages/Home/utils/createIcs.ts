@@ -3,12 +3,12 @@ const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
 const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
-export const nextMeetupDate = ['Wed', '11', 'Aug', '7.00pm'];
-export const nextMeetupTitle = "Futures & Foresighting: Tools for Humane Technologists - with Lorenn Ruster and Chamira Gamage";
+export const nextMeetupDate = ['Wed', '8', 'Sep', '7.00pm'];
+export const nextMeetupTitle = "Open Discussion – Scanning Users' Cloud Content & Vaccine Passport-Tech";
 
-export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsycclbpb/';
-export const nextMeetupDateStart = '20210811T090000Z';
-export const nextMeetupDateEnd = '20210811T100000Z';
+export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsyccmblb/';
+export const nextMeetupDateStart = '20210908T090000Z';
+export const nextMeetupDateEnd = '20210908T100000Z';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
 Topic:
