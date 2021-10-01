@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "0.21.4",
     "cross-fetch": "3.0.6",
     "errable": "0.3.5",
     "next": "10.2.0",
@@ -18,9 +19,10 @@
   },
   "devDependencies": {
     "@types/node": "14.11.2",
+    "@types/ramda": "0.27.45",
     "@types/react": "16.9.49",
     "babel-plugin-inline-react-svg": "1.1.1",
     "sass": "1.26.11",
-    "typescript": "4.0.3"
+    "typescript": "4.4.2"
   }
 }
