@@ -4,7 +4,7 @@ const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
 const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
 export const nextMeetupDate = ['Wed', '13', 'Oct', '7.00pm'];
-export const nextMeetupTitle = "TBA";
+export const nextMeetupTitle = "Manal al-Sharif: “We don’t sell your data” and 5 Other Hilarious Privacy Lies Big Tech Told Us";
 
 export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsyccnbrb/';
 export const nextMeetupDateStart = '20211013T090000Z';
