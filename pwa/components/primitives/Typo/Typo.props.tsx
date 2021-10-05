@@ -8,7 +8,7 @@ type HTMLParaProps = React.DetailedHTMLProps<
 >;
 
 export interface TypoPublicProps
-  extends CompWithChildren,
+  extends Partial<CompWithChildren>,
     UtilProps,
     Omit<HTMLParaProps, 'children' | 'className'> {
   tagName?: string;
