@@ -36,19 +36,24 @@ const News = (props: NewsProps) => {
       <Box className={[css.hero, commonCss.contentWrapper]} />
       <Box className={[commonCss.contentWrapper]}>
         <Box className={[commonCss.contentInner, commonCss.section]}>
-          <T h2 mb={2}>Humane Technology News</T>
+          <T h2 mb={2}>Humane Technology Australia News</T>
           {props.articles?.map(
             article => (
-              <Box key={article.id}>
+              <Box key={article.id} mb={2}>
                 <>
-                  <T h3>
-                    <Link to={`/news/${article.slug}/${article.id}`}>
-                      <a>{article.heading}</a>
-                    </Link>
-                  </T>
+                  {article.body ? (
+                    <T h3>
+                      <Link to={`/news/${article.slug}/${article.id}`}>
+                        <a dangerouslySetInnerHTML={{ __html: article.heading}} />
+                      </Link>
+                    </T>
+                  ) : (
+                    <T h3 dangerouslySetInnerHTML={{ __html: article.heading}}></T>
+                  )}
+                  <T content-caption>{article.date}</T>
                   <Box dangerouslySetInnerHTML={{ __html:
-                    article.body
-                  }} />
+                    article.summary + (article.body || '')
+                  }} mt={1} />
                 </>
               </Box>
           ) || null)}

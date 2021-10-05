@@ -2,7 +2,9 @@ export type Article = {
   id: number | null,
   heading: string | null,
   slug: string | null,
-  body: string,
+  date: string | null,
+  summary: string,
+  body: string | null,
 }
 
 function stringToSlug(str) {
@@ -26,17 +28,41 @@ function stringToSlug(str) {
 
 const idPattern = /`id:(\d*?)`/;
 const headPattern = /># ?(.*?)</;
+const datePattern = />#### ?(.*?)</;
+const moreSeparatorPattern = /<.*?><.*?>--more--<\/.*?><\/.*?/;
+
+const formatContent = (str) =>
+  str.replace(/<p[^>]*?><span[^>]*?>?<?\/span><\/p><p[^>]*?><span[^>]*?>?<?\/span><\/p><p[^>]*?><span[^>]*?>?<?\/span><\/p>/g,
+    '<p><span></span></p><p><span></span></p>')
+    .replace(/<p[^>]*?><span[^>]*?>$/, '')
+    .replace(/^.*?(<p[^>]*?><span[^>]*?>[^<])/g,
+      '$1')
+    .replace(/^<\/span><\/p>/, '');
 
 const parseArticle = (articleBody: string): Article => {
   const idMatches = articleBody.match(idPattern);
   const id = idMatches?.[1] || null;
   const headMatches = articleBody.match(headPattern);
   const heading = headMatches?.[1] || null;
-  const body = articleBody.replace(idPattern, '').replace(headPattern, '');
+  const dateMatches = articleBody.match(datePattern);
+  const date = dateMatches?.[1] || null;
+  const content = articleBody
+    .replace(idPattern, '')
+    .replace(headPattern, '')
+    .replace(datePattern, '');
+  const moreSeparatorMatchPos = content.match(moreSeparatorPattern);
+  const moreSeparatorPos = moreSeparatorMatchPos?.index;
+  const hasMore = moreSeparatorMatchPos?.index > 0;
+  const wholeBody = hasMore ? content.replace(moreSeparatorPattern, '') : content;
+  const summary = formatContent(hasMore ? content.substr(0, moreSeparatorPos) : content);
+  const body = hasMore ? formatContent(wholeBody.substr(moreSeparatorPos)) : null;
+
   return {
     id: parseInt(id, 10) || null,
     heading: heading || null,
     slug: (heading && stringToSlug(heading)) || null,
+    date: date || null,
+    summary,
     body
   }
 }
