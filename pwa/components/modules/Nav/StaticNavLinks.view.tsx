@@ -26,6 +26,15 @@ const StaticNavLinks = ({ closeMenu, isMobileSize }: StaticNavLinksProps) => {
       </Box>
       <Box onClick={closeMenu} className={css['nav-link-ctnr']}>
         <Link
+          to={ROUTE_PATHS.NEWS}
+          className={css._link}
+          activeClass={css['--active']}
+        >
+          News
+        </Link>
+      </Box>
+      <Box onClick={closeMenu} className={css['nav-link-ctnr']}>
+        <Link
           to={ROUTE_PATHS.CONTACT}
           className={css._link}
           activeClass={css['--active']}

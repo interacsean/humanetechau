@@ -1,4 +1,4 @@
-export type Article = {
+export type ArticleData = {
   id: number | null,
   heading: string | null,
   slug: string | null,
@@ -37,9 +37,10 @@ const formatContent = (str) =>
     .replace(/<p[^>]*?><span[^>]*?>$/, '')
     .replace(/^.*?(<p[^>]*?><span[^>]*?>[^<])/g,
       '$1')
-    .replace(/^<\/span><\/p>/, '');
+    .replace(/^<\/span><\/p>/, '')
+    .replace(/\[(.*?)\]\((.*?)\)/g, `<a href='$2' target="_blank">$1</a>`);
 
-const parseArticle = (articleBody: string): Article => {
+const parseArticle = (articleBody: string): ArticleData => {
   const idMatches = articleBody.match(idPattern);
   const id = idMatches?.[1] || null;
   const headMatches = articleBody.match(headPattern);
@@ -58,7 +59,7 @@ const parseArticle = (articleBody: string): Article => {
   const body = hasMore ? formatContent(wholeBody.substr(moreSeparatorPos)) : null;
 
   return {
-    id: parseInt(id, 10) || null,
+    id: isNaN(parseInt(id, 10) || null) ? null : parseInt(id, 10),
     heading: heading || null,
     slug: (heading && stringToSlug(heading)) || null,
     date: date || null,

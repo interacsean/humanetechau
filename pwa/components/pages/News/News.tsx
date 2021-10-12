@@ -1,32 +1,19 @@
-import { GetStaticPropsContext, NextPage } from 'next';
-import React, { FormEvent } from 'react';
-import fetch from 'cross-fetch';
-import { Nullable } from 'errable';
+import { GetStaticPropsContext } from 'next';
+import React from 'react';
 
-import { serialize } from '../../../../utils/Data/serialize/serialize';
 import MainLayout from '../../layouts/MainLayout';
 import Box from '../../primitives/Box';
 import T from '../../primitives/Typo';
-import InputLabel from '../../layouts/InputLabel';
-import Input from '../../primitives/Input/Input.view';
-import Button from '../../primitives/Button';
 
 import commonCss from '../common.module.scss';
 import css from './News.module.scss';
-import GridCols from '../../primitives/GridCols';
+import Article from '../../modules/Article';
 import getGDocContent from '../../../../utils/GDocContent/getGDocContent';
 import splitArticles from '../../../../utils/NewsArticles/splitArticles';
-import parseArticle, { Article } from '../../../../utils/NewsArticles/parseArticle';
-import Link from '../../primitives/Link/Link.view';
-
-const DEFAULT_FORM = {
-  name: '',
-  email: '',
-  message: '',
-};
+import parseArticle, { ArticleData } from '../../../../utils/NewsArticles/parseArticle';
 
 type NewsProps = {
-  articles: Article[] | null
+  articles: ArticleData[] | null
 }
 
 const News = (props: NewsProps) => {
@@ -40,21 +27,7 @@ const News = (props: NewsProps) => {
           {props.articles?.map(
             article => (
               <Box key={article.id} mb={2}>
-                <>
-                  {article.body ? (
-                    <T h3>
-                      <Link to={`/news/${article.slug}/${article.id}`}>
-                        <a dangerouslySetInnerHTML={{ __html: article.heading}} />
-                      </Link>
-                    </T>
-                  ) : (
-                    <T h3 dangerouslySetInnerHTML={{ __html: article.heading}}></T>
-                  )}
-                  <T content-caption>{article.date}</T>
-                  <Box dangerouslySetInnerHTML={{ __html:
-                    article.summary + (article.body || '')
-                  }} mt={1} />
-                </>
+                <Article {...article} />
               </Box>
           ) || null)}
         </Box>
@@ -68,7 +41,8 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const content = await getGDocContent(
     'd/e/2PACX-1vSG1tIoAwnQAgeE58mE5qj37YJJ0Md3OhWHIt4qqCIyGw3hOF_SgWuONAn9gNZlQ8M2Y8a0-Mdr6F3z', css.contentCtnr)
   const articlesRaw = splitArticles(content);
-  const articles = articlesRaw.map(parseArticle);
+  const articles = articlesRaw.map(parseArticle)
+    .filter(x => !!x.id && !!x.heading);
   return {
     props: {
       articles

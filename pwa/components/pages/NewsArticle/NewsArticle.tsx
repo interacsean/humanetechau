@@ -16,7 +16,7 @@ import css from './NewsArticle.module.scss';
 import GridCols from '../../primitives/GridCols';
 import getGDocContent from '../../../../utils/GDocContent/getGDocContent';
 import splitArticles from '../../../../utils/NewsArticles/splitArticles';
-import parseArticle, { Article } from '../../../../utils/NewsArticles/parseArticle';
+import parseArticle, { ArticleData } from '../../../../utils/NewsArticles/parseArticle';
 
 const DEFAULT_FORM = {
   name: '',
@@ -25,7 +25,7 @@ const DEFAULT_FORM = {
 };
 
 type NewsArticleProps = {
-  article: Article | null
+  article: ArticleData | null
 }
 
 const NewsArticle = (props: NewsArticleProps) => {

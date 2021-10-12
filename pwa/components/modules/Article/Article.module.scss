@@ -1,0 +1,11 @@
+@import '../../../theme/common';
+
+.bodyCtnr {
+  > p {
+    font-size: toRem(17.5px);
+    max-width: 70ch;
+  }
+  > p + p {
+    margin-top: 1em;
+  }
+}
