@@ -3,12 +3,12 @@ const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
 const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
-export const nextMeetupDate = ['Wed', '17', 'Nov', '8.00pm'];
-export const nextMeetupTitle = "Leigh-Chantelle: Top Tips for Finding Balance with Technology, + Facebook and the \"Metaverse\"";
+export const nextMeetupDate = ['Wed', '15', 'Dec', '8.00pm'];
+export const nextMeetupTitle = "Humane Technology Catchup";
 
-export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsyccpbnb/';
-export const nextMeetupDateStart = '20211117T090000Z';
-export const nextMeetupDateEnd = '20211117T100000Z';
+export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsyccqblb/';
+export const nextMeetupDateStart = '20211115T090000Z';
+export const nextMeetupDateEnd = '20211115T100000Z';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
 Topic:
