@@ -1,14 +1,18 @@
+// --- update these:
+
+export const nextMeetupDate = ['Wed', '16', 'Mar', '7.30pm'];
+export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsydcfbmb/';
+export const nextMeetupDateStart = '20220316T083000Z';
+export const nextMeetupDateEnd = '20220316T093000Z';
+export const nextMeetupTitle = "Social media during crisis & Dark patterns";
+export const nextMeetupDesc = "An open discussion discussing how social media and technology have impacted recent crises; and, a recent announcement by the ACCC that they are seeking to punish companies using 'dark patterns' against consumers."
+
+// ----
 
 const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
 const zoomLink = 'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
-export const nextMeetupDate = ['Wed', '9', 'Feb', '7.30pm'];
-export const nextMeetupTitle = "Humane Technology Catchup";
-
-export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/283419084/';
-export const nextMeetupDateStart = '20221209T083000Z';
-export const nextMeetupDateEnd = '20221209T093000Z';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
 Topic:

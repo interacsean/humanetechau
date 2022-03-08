@@ -11,7 +11,13 @@ import Link from '../../primitives/Link/Link.view';
 import ROUTE_PATHS from '../../../../consts/ROUTE_PATHS';
 import Hr from '../../primitives/Hr';
 import BodySegment from '../../layouts/BodySegment';
-import openIcs, { nextMeetupDate, nextMeetupGCalLink, nextMeetupLink, nextMeetupTitle } from './utils/createIcs';
+import openIcs, {
+  nextMeetupDate,
+  nextMeetupDesc,
+  nextMeetupGCalLink,
+  nextMeetupLink,
+  nextMeetupTitle,
+} from './utils/createIcs';
 
 type HomePublicProps = {};
 
@@ -63,7 +69,7 @@ const Home: NextPage<HomePublicProps> = (
               through guest speakers and open conversation.
             </T>
             <T content-pragmatic mb={1}>
-              Meetings are held on the 2nd Wednesday of each month.
+              Meetings are usually held on the 2nd Wednesday of each month.
             </T>
             <Box flex-sec="start" style={{ maxWidth: '70ch' }}>
               <div dangerouslySetInnerHTML={{ __html: `
@@ -88,6 +94,9 @@ const Home: NextPage<HomePublicProps> = (
 
                 <T h5 mv={1 / 3}>
                   {nextMeetupTitle}
+                </T>
+                <T mv={1 / 3}>
+                  {nextMeetupDesc}
                 </T>
                 <T content-pragmatic>Ways to join:</T>
                 <T content-pragmatic><a href={nextMeetupLink} target="_blank">RSVP on Meetup</a>
