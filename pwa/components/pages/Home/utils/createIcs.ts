@@ -1,11 +1,11 @@
 // --- update these:
 
-export const nextMeetupDate = ['Wed', '16', 'Mar', '7.30pm'];
-export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/fqgchsydcfbmb/';
-export const nextMeetupDateStart = '20220316T083000Z';
-export const nextMeetupDateEnd = '20220316T093000Z';
-export const nextMeetupTitle = "Social media during crisis & Dark patterns";
-export const nextMeetupDesc = "An open discussion discussing how social media and technology have impacted recent crises; and, a recent announcement by the ACCC that they are seeking to punish companies using 'dark patterns' against consumers."
+export const nextMeetupDate = ['Wed', '20', 'Apr', '7.00pm'];
+export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/284819631/';
+export const nextMeetupDateStart = '20220420T090000Z';
+export const nextMeetupDateEnd = '20220420T100000Z';
+export const nextMeetupTitle = "A Framework for Humane Technology";
+export const nextMeetupDesc = "Joël Kalmanowicz (Atlassian, ex-Google) will talk us through his draft Framework for Humane Technology"
 
 // ----
 

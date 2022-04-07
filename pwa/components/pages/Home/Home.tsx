@@ -69,7 +69,7 @@ const Home: NextPage<HomePublicProps> = (
               through guest speakers and open conversation.
             </T>
             <T content-pragmatic mb={1}>
-              Meetings are usually held on the 2nd Wednesday of each month.
+              Meetings are held on the 2nd or 3rd Wednesday of each month.
             </T>
             <Box flex-sec="start" style={{ maxWidth: '70ch' }}>
               <div dangerouslySetInnerHTML={{ __html: `
