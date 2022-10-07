@@ -95,13 +95,17 @@ const Home: NextPage<HomePublicProps> = (
                 <T h5 mv={1 / 3}>
                   {nextMeetupTitle}
                 </T>
-                <T mv={1 / 3}>
-                  {nextMeetupDesc}
-                </T>
+                {
+                  nextMeetupDesc && (
+                    <T mv={1 / 3}>
+                      {nextMeetupDesc}
+                    </T>
+                  )
+                }
                 <T content-pragmatic>Ways to join:</T>
                 <T content-pragmatic><a href={nextMeetupLink} target="_blank">RSVP on Meetup</a>
                  <span className={css.textSpacer}> | </span><a href={nextMeetupGCalLink} target="_blank">Add to Google Calendar</a>
-                  <span className={css.textSpacer}> | </span><a onClick={openIcs} target="_blank">Add to Outlook / iCal</a> </T>
+                 <span className={css.textSpacer}> | </span><a onClick={openIcs} target="_blank">Add to Outlook / iCal</a> </T>
               </Box>
             </Box>
           </Box>
