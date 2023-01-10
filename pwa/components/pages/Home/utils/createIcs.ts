@@ -12,7 +12,7 @@ export const nextMeetupDesc = false; //"Joël Kalmanowicz (Atlassian, ex-Google)
 const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
-const joinLink = 'meet.google.com/syu-gehg-dvm';
+const joinLink = 'https://meet.google.com/syu-gehg-dvm';
 //'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
