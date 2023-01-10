@@ -83,7 +83,7 @@ const Home: NextPage<HomePublicProps> = (
                     <tr>
                       <td style="padding: 0.3em 0.3em 0.5em; background-color: white;" align="center">
                         <span style="text-align: center; font-weight: bolder; font-size: 80%; line-height:100%; margin:0">${nextMeetupDate[0]}</span><br/>
-                        <span style="text-align: center; font-size: 200%; line-height:100%; margin:0">${nextMeetupDate[1]}</span><br/><span style="text-align: center; font-size: 70%; line-height:100%; margin:0">${nextMeetupDate[3]} <span style="font-size:90%">AEST</span></span>
+                        <span style="text-align: center; font-size: 200%; line-height:100%; margin:0">${nextMeetupDate[1]}</span><br/><span style="text-align: center; font-size: 70%; line-height:100%; margin:0">${nextMeetupDate[3]}</span>
                       </td>
                     </tr>
                   </tbody>

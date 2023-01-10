@@ -1,10 +1,10 @@
 // --- update these:
 
-export const nextMeetupDate = ['Wed', '14', 'December', '7.00pm AEST / 6.00pm AEDT'];
-export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/289943804/';
-export const nextMeetupDateStart = '20221214T080000Z';
-export const nextMeetupDateEnd = '20221214T090000Z';
-export const nextMeetupTitle = "Content moderation and impact on online abuse";
+export const nextMeetupDate = ['Wed', '18', 'January', '8.00pm AEST / 7.00pm AEDT'];
+export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/zflwxsyfccbpb/';
+export const nextMeetupDateStart = '20230118T090000Z';
+export const nextMeetupDateEnd = '20230118T100000Z';
+export const nextMeetupTitle = "What will ChatGPT-like AI mean for Human jobs?";
 export const nextMeetupDesc = false; //"Joël Kalmanowicz (Atlassian, ex-Google) will talk us through his draft Framework for Humane Technology"
 
 // ----
@@ -12,7 +12,7 @@ export const nextMeetupDesc = false; //"Joël Kalmanowicz (Atlassian, ex-Google)
 const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
-const joinLink = 'meet.google.com/goi-cvnw-wdk';
+const joinLink = 'meet.google.com/syu-gehg-dvm';
 //'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
