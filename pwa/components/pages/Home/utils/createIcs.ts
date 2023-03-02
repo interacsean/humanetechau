@@ -1,18 +1,18 @@
 // --- update these:
 
-export const nextMeetupDate = ['Wed', '18', 'January', '8.00pm AEST / 7.00pm AEDT'];
-export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/zflwxsyfccbpb/';
-export const nextMeetupDateStart = '20230118T090000Z';
-export const nextMeetupDateEnd = '20230118T100000Z';
-export const nextMeetupTitle = "What will ChatGPT-like AI mean for Human jobs?";
-export const nextMeetupDesc = false; //"Joël Kalmanowicz (Atlassian, ex-Google) will talk us through his draft Framework for Humane Technology"
+export const nextMeetupDate = ['Wed', '8', 'March', '8.00pm AEST / 7.00pm AEDT'];
+export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/291656097/';
+export const nextMeetupDateStart = '20230308T090000Z';
+export const nextMeetupDateEnd = '20230308T100000Z';
+export const nextMeetupTitle = "Australia's Online Safety Act just came into effect.  What is it and what does it mean?";
+export const nextMeetupDesc = "Australia's Online Safety Act, overseen by the eSafety commission, was drafted in 2021 and had been open for feedback.  In late January, it came into effect.  What is it and what does it mean for technology providers, what does it mean for Australian technology users?"
+const joinLink = 'https://meet.google.com/hfg-fiun-cns';
 
 // ----
 
 const enc = encodeURIComponent;
 const encLines = (s: string) => s.replace(/\n/g, "\\n");
 
-const joinLink = 'https://meet.google.com/syu-gehg-dvm';
 //'https://zoom.us/j/6481021976?pwd=cmxiUE5WT1YzVGpOQUw4S256OWNnQT09';
 export const nextMeetupDetails = `Join us for this month's HTA discussion meeting
 
