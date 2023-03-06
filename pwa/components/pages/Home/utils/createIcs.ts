@@ -4,8 +4,8 @@ export const nextMeetupDate = ['Wed', '8', 'March', '8.00pm AEST / 7.00pm AEDT']
 export const nextMeetupLink = 'https://www.meetup.com/humane-technology-australia/events/291656097/';
 export const nextMeetupDateStart = '20230308T090000Z';
 export const nextMeetupDateEnd = '20230308T100000Z';
-export const nextMeetupTitle = "Australia's Online Safety Act just came into effect.  What is it and what does it mean?";
-export const nextMeetupDesc = "Australia's Online Safety Act, overseen by the eSafety commission, was drafted in 2021 and had been open for feedback.  In late January, it came into effect.  What is it and what does it mean for technology providers, what does it mean for Australian technology users?"
+export const nextMeetupTitle = "Australia's Online Safety Act's first year in effect";
+export const nextMeetupDesc = "Australia's Online Safety Act, overseen by the eSafety commission, as been in effect for just over a year.  What is it and what has happened under its watch for technology providers?"
 const joinLink = 'https://meet.google.com/hfg-fiun-cns';
 
 // ----
