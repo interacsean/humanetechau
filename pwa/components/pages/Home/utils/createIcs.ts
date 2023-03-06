@@ -6,7 +6,7 @@ export const nextMeetupDateStart = '20230308T090000Z';
 export const nextMeetupDateEnd = '20230308T100000Z';
 export const nextMeetupTitle = "Australia's Online Safety Act's first year in effect";
 export const nextMeetupDesc = "Australia's Online Safety Act, overseen by the eSafety commission, as been in effect for just over a year.  What is it and what has happened under its watch for technology providers?"
-const joinLink = 'https://meet.google.com/hfg-fiun-cns';
+const joinLink = 'https://meet.google.com/dmj-khgd-vex';
 
 // ----
 
